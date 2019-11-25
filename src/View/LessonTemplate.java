@@ -146,7 +146,7 @@ public class LessonTemplate extends javax.swing.JFrame {
             Logger.getLogger(LessonTemplate.class.getName()).log(Level.SEVERE, null, ex);
             JOptionPane.showMessageDialog(null,ex.getMessage());
         }
-        
+        dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     public static String runCmd(String command) throws Exception {
