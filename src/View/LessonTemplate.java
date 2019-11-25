@@ -137,6 +137,8 @@ public class LessonTemplate extends javax.swing.JFrame {
             //execute java file
             storeInput = runCmd("java q1");
             
+            JOptionPane.showMessageDialog(null,storeInput);
+            
         } catch (FileNotFoundException ex) {
             Logger.getLogger(LessonTemplate.class.getName()).log(Level.SEVERE, null, ex);
             JOptionPane.showMessageDialog(null,ex.getMessage());
