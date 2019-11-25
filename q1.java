@@ -1,9 +1,11 @@
-class HelloWorld
+/* This is a simple Java program. 
+   FileName : "HelloWorld.java". */
+class q1
 { 
     // Your program begins with a call to main(). 
     // Prints "Hello, World" to the terminal window. 
     public static void main(String args[]) 
     { 
-        System.out.println("name"); 
+        System.out.println("Hello"); 
     } 
 } 

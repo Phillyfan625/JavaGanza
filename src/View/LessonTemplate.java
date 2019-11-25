@@ -11,6 +11,7 @@ import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -123,36 +124,46 @@ public class LessonTemplate extends javax.swing.JFrame {
             PrintWriter pw = new PrintWriter("q1.java");
             pw.write(jTextArea1.getText());
             pw.close();
-                        
+            
+
+            String storeInput;            
             //turn that into command line
-            runCmd("javac C:\\Users\\peter.johnson\\Documents\\NetBeansProjects\\JavaGanza\\q1.java");
-                       
-            runCmd("echo Main-Class: HelloWorld > C:\\Users\\peter.johnson\\Documents\\NetBeansProjects\\JavaGanza\\manifest.txt");
-            
-            
+            storeInput = runCmd("javac C:\\Users\\peter.johnson\\Documents\\NetBeansProjects\\JavaGanza\\q1.java");
+            if(!storeInput.equals("")){
+                throw new Exception(storeInput);
+            }           
+            storeInput = runCmd("echo Main-Class: q1 > C:\\Users\\peter.johnson\\Documents\\NetBeansProjects\\JavaGanza\\manifest.txt");
+ 
             //execute java file
-            runCmd("java HelloWorld");
+            storeInput = runCmd("java q1");
             
         } catch (FileNotFoundException ex) {
             Logger.getLogger(LessonTemplate.class.getName()).log(Level.SEVERE, null, ex);
+            JOptionPane.showMessageDialog(null,ex.getMessage());
         } catch (Exception ex) {
             Logger.getLogger(LessonTemplate.class.getName()).log(Level.SEVERE, null, ex);
+            JOptionPane.showMessageDialog(null,ex.getMessage());
         }
         
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    public static void runCmd(String command) throws Exception {
+    public static String runCmd(String command) throws Exception {
         ProcessBuilder builder = new ProcessBuilder(
             "cmd.exe", "/c", command);
         builder.redirectErrorStream(true);
         Process p = builder.start();
         BufferedReader r = new BufferedReader(new InputStreamReader(p.getInputStream()));
+        BufferedReader r2 = new BufferedReader(new InputStreamReader(p.getErrorStream()));
         String line;
+        String br = "";
         while (true) {
             line = r.readLine();
             if (line == null) { break; }
+            br+= line;
             System.out.println(line);
         }
+        
+     return br;
     }
     /**
      * @param args the command line arguments
