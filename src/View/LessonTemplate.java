@@ -29,23 +29,30 @@ public class LessonTemplate extends javax.swing.JFrame {
      */
     public LessonTemplate() {
         initComponents();
+        //questions();
     }
     
-    public String[]questions(){
-        
-        String[] questions = {"Hello World Application",
-            "Create a for loop",
-            "Write a program that has your name in it"};   
-        int i = new Random().nextInt(questions.length);
-        System.out.println(i);
-        jLabel1.setText(questions().toString());
-        return questions;
-    }
+//    public static String[] questions(){
+//        
+//         String[] questions = new String[];
+//        questions[0] = "Hello World Application";
+//        questions[1] = "Create a for loop";
+//        questions[2] = "Write a program that has your name in it";
+//           
+//        
+//         int i = new Random().nextInt(questions.length);
+//        for(i = 0;i<questions.length;i++){
+//            jLabel1.setText(questions[]()); 
+//            
+//        }
+//        
+//        return questions[0];
+//    }
     
-    private void jLabel1ActionPerformed(java.awt.event.ActionEvent evt){
-        jLabel1.setText(questions().toString());
-        System.out.println(questions().toString());
-    }
+//    private void jLabel1ActionPerformed(java.awt.event.ActionEvent evt){
+//        jLabel1.setText(questions().toString());
+//        System.out.println(questions().toString());
+//    }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -224,6 +231,7 @@ public class LessonTemplate extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new LessonTemplate().setVisible(true);
+                
             }
         });
     }
