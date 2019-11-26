@@ -6,6 +6,7 @@
 package View;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
@@ -123,21 +124,25 @@ public class LessonTemplate extends javax.swing.JFrame {
             //take textarea1 to java
             PrintWriter pw = new PrintWriter("q1.java");
             pw.write(jTextArea1.getText());
-            pw.close();
-            
+            pw.close();            
 
             String storeInput;            
             //turn that into command line
-            storeInput = runCmd("javac C:\\Users\\peter.johnson\\Documents\\NetBeansProjects\\JavaGanza\\q1.java");
+            //storeInput = runCmd("javac C:\\Users\\peter.johnson\\Documents\\NetBeansProjects\\JavaGanza\\q1.java");
+            storeInput = runCmd("javac " +  new File("").getAbsolutePath() + "\\q1.java");
             if(!storeInput.equals("")){
                 throw new Exception(storeInput);
             }           
-            storeInput = runCmd("echo Main-Class: q1 > C:\\Users\\peter.johnson\\Documents\\NetBeansProjects\\JavaGanza\\manifest.txt");
- 
+            //storeInput = runCmd("echo Main-Class: q1 > C:\\Users\\peter.johnson\\Documents\\NetBeansProjects\\JavaGanza\\manifest.txt");
+            storeInput = runCmd("echo Main-Class: q1 > " + new File("").getAbsolutePath() + "\\manifest.txt");
+            
             //execute java file
+            //storeInput = runCmd("java q1");
             storeInput = runCmd("java q1");
             
             JOptionPane.showMessageDialog(null,storeInput);
+            
+            System.out.println(new File("").getAbsolutePath());
             
         } catch (FileNotFoundException ex) {
             Logger.getLogger(LessonTemplate.class.getName()).log(Level.SEVERE, null, ex);
