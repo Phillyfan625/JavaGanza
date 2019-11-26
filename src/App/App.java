@@ -3,6 +3,8 @@ package App;
 import View.LessonTemplate;
 import View.MainMenu;
 import java.util.ArrayList;
+import  java.util.Collections.*;
+import java.util.Random;
 
 
 public class App
@@ -15,7 +17,8 @@ public class App
             lessons.add(lessonOne);
             lessons.add(lessonTwo);
             lessons.add(lessonThree);
-
+            
+            
             MainMenu mm = new MainMenu();
             mm.setVisible(true);
         }
