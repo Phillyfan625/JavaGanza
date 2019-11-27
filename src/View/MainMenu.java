@@ -11,7 +11,11 @@ import java.util.ArrayList;
  *
  * @author Test
  */
+
+
 public class MainMenu extends javax.swing.JFrame {
+    
+    int  correctAnswers = 0;
 
    private ArrayList<LessonTemplate> lessons;
     /**
@@ -126,19 +130,20 @@ public class MainMenu extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        LessonTemplate lt = new LessonTemplate();
-        lt.setVisible(true);
+        LessonTemplate lt1 = new LessonTemplate(correctAnswers);
+        lt1.setVisible(true);
+        
         dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-         LessonTemplate lt = new LessonTemplate();
-        lt.setVisible(true);
+         LessonTemplate lt2 = new LessonTemplate(correctAnswers);
+        lt2.setVisible(true);
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-         LessonTemplate lt = new LessonTemplate();
-        lt.setVisible(true);
+         LessonTemplate lt3 = new LessonTemplate(correctAnswers);
+        lt3.setVisible(true);
     }//GEN-LAST:event_jButton3ActionPerformed
 
     /**

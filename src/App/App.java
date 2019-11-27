@@ -10,9 +10,9 @@ import java.util.Random;
 public class App
 {
         public static void main(String[] args){
-            LessonTemplate lessonOne = new LessonTemplate();
-            LessonTemplate lessonTwo = new LessonTemplate();
-            LessonTemplate lessonThree = new LessonTemplate();
+            LessonTemplate lessonOne = new LessonTemplate(0);
+            LessonTemplate lessonTwo = new LessonTemplate(0);
+            LessonTemplate lessonThree = new LessonTemplate(0);
             ArrayList<LessonTemplate> lessons = new ArrayList<>();
             lessons.add(lessonOne);
             lessons.add(lessonTwo);
