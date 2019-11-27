@@ -27,27 +27,26 @@ public class LessonTemplate extends javax.swing.JFrame {
     /**
      * Creates new form LessonTemplate
      */
+    int qNum = 0;
+    int correctAnswers = 0;
+    
     public LessonTemplate() {
         initComponents();
-        //questions();
+        questions();
     }
     
-//    public static String[] questions(){
-//        
-//         String[] questions = new String[];
-//        questions[0] = "Hello World Application";
-//        questions[1] = "Create a for loop";
-//        questions[2] = "Write a program that has your name in it";
-//           
-//        
-//         int i = new Random().nextInt(questions.length);
-//        for(i = 0;i<questions.length;i++){
-//            jLabel1.setText(questions[]()); 
-//            
-//        }
-//        
-//        return questions[0];
-//    }
+    public String[] questions(){
+        
+         String[] questions = new String[3];
+        questions[0] = "Hello World Application";
+        questions[1] = "Create a for loop";
+        questions[2] = "Write a program that has your name in it";
+        
+        qNum = new Random().nextInt(questions.length);
+        jLabel2.setText(questions[qNum]); 
+        
+        return questions;
+    }
     
 //    private void jLabel1ActionPerformed(java.awt.event.ActionEvent evt){
 //        jLabel1.setText(questions().toString());
@@ -102,16 +101,17 @@ public class LessonTemplate extends javax.swing.JFrame {
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 302, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(42, 42, 42))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel3)
+                        .addGap(149, 149, 149))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel1)
+                        .addGap(144, 144, 144))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(108, 108, 108))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addComponent(jButton1)
-                        .addGap(158, 158, 158))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel1)
-                            .addComponent(jLabel3))
-                        .addGap(136, 136, 136))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 271, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(57, 57, 57))))
+                        .addGap(162, 162, 162))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -124,9 +124,9 @@ public class LessonTemplate extends javax.swing.JFrame {
                 .addComponent(jLabel3)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButton1)
-                .addContainerGap(19, Short.MAX_VALUE))
+                .addContainerGap(24, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -170,6 +170,20 @@ public class LessonTemplate extends javax.swing.JFrame {
             
             JOptionPane.showMessageDialog(null,storeInput);
             
+            //this is the if else statement that checks the answer for question 1
+            switch(qNum){
+                case 0:
+                    q1(storeInput);
+                    break;
+                case 1:
+                    q2(storeInput);
+                    break;
+                case 2:
+                    q3(storeInput);
+                    break;
+            }
+                
+            
             System.out.println(new File("").getAbsolutePath());
             
         } catch (FileNotFoundException ex) {
@@ -181,7 +195,52 @@ public class LessonTemplate extends javax.swing.JFrame {
         }
         dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
-
+        
+    
+        public void q1(String storeInput){
+        
+             if(storeInput.equals("Hello World")){
+                String result =("You've got it right!");
+                correctAnswers++;
+                JOptionPane.showMessageDialog(null,result);
+                JOptionPane.showMessageDialog(null,"Correct Answers: " + correctAnswers + "/3");
+                
+            }
+            else{
+                String result = ("you suck");
+                JOptionPane.showMessageDialog(null,result);
+                JOptionPane.showMessageDialog(null,"Correct Answers: " + correctAnswers + "/3");
+            }
+    }
+        
+        public void q2(String storeInput){
+        
+             if(storeInput.equals("Hello World")){
+                String result =("You've got it right!");
+                correctAnswers++;
+                JOptionPane.showMessageDialog(null,result);
+                JOptionPane.showMessageDialog(null,"Correct Answers: " + correctAnswers + "/3");
+            }
+            else{
+                String result = ("you suck");
+                JOptionPane.showMessageDialog(null,result);
+                JOptionPane.showMessageDialog(null,"Correct Answers: " + correctAnswers + "/3");
+            }
+    }
+         public void q3(String storeInput){
+        
+             if(storeInput.equals("Hello World")){
+                String result =("You've got it right!");
+                correctAnswers++;
+                JOptionPane.showMessageDialog(null,result);
+                JOptionPane.showMessageDialog(null,"Correct Answers: " + correctAnswers + "/3");
+            }
+            else{
+                String result = ("you suck");
+                JOptionPane.showMessageDialog(null,result);
+                JOptionPane.showMessageDialog(null,"Correct Answers: " + correctAnswers + "/3");
+            }
+    }
     public static String runCmd(String command) throws Exception {
         ProcessBuilder builder = new ProcessBuilder(
             "cmd.exe", "/c", command);
