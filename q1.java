@@ -5,5 +5,3 @@ public class q1{
     }
 
 }
-
-

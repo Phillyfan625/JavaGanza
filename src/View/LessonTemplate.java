@@ -179,8 +179,7 @@ public class LessonTemplate extends javax.swing.JFrame {
             //this is the case statement that checks the answer for questions
             switch(qNum){
                 case 0:
-                    q1(storeInput);
-                    
+                    q1(storeInput);                
                     break;
                 case 1:
                     q2(storeInput);
