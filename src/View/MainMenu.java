@@ -1,23 +1,12 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package View;
 
 import java.util.ArrayList;
-
-/**
- *
- * @author Test
- */
-
 
 public class MainMenu extends javax.swing.JFrame {
     
     int  correctAnswers = 0;
 
-   private ArrayList<LessonTemplate> lessons;
+    private ArrayList<LessonTemplate> lessons;
     /**
      * Creates new form JFrame
      */

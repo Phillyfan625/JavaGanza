@@ -1,16 +1,9 @@
 package Model;
 
-
-
-public class LessonLogic
-{
+public class LessonLogic {
 	// Instance Variables -- define your private data
         String questions;
         String answers;
-        
-    
-    
-
 
 	// Constructors
 	public LessonLogic()
