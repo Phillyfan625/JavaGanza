@@ -29,6 +29,7 @@ public class LessonTemplate extends javax.swing.JFrame {
 
         // intialize components and get questions
         initComponents();
+        setResizable(false);
         questions();
 
         // after generating a button, change the question number
