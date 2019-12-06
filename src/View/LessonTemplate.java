@@ -24,9 +24,8 @@ public class LessonTemplate extends javax.swing.JFrame {
     // questions are the same every time, so it doesn't need static
     String[] questions;
 
-    public LessonTemplate(int cAnswers) {
+    public LessonTemplate() {
         questions = new String[3];
-        correctAnswers = cAnswers;
 
         // intialize components and get questions
         initComponents();
@@ -298,7 +297,7 @@ public class LessonTemplate extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new LessonTemplate(0).setVisible(true);
+                new LessonTemplate().setVisible(true);
                 
             }
         });

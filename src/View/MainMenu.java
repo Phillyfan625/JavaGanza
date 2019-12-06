@@ -4,8 +4,6 @@ import java.util.ArrayList;
 
 public class MainMenu extends javax.swing.JFrame {
 
-    int  correctAnswers = 0;
-
     private ArrayList<LessonTemplate> lessons;
     /**
      * Creates new form JFrame
@@ -131,20 +129,21 @@ public class MainMenu extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        LessonTemplate lt1 = new LessonTemplate(correctAnswers);
+        LessonTemplate lt1 = new LessonTemplate();
         lt1.setVisible(true);
-
         dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        LessonTemplate lt2 = new LessonTemplate(correctAnswers);
+        LessonTemplate lt2 = new LessonTemplate();
         lt2.setVisible(true);
+        dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-         LessonTemplate lt3 = new LessonTemplate(correctAnswers);
+        LessonTemplate lt3 = new LessonTemplate();
         lt3.setVisible(true);
+        dispose();
     }//GEN-LAST:event_jButton3ActionPerformed
 
     /**
