@@ -168,19 +168,6 @@ public class LessonTemplate extends javax.swing.JFrame {
             // then gives the result of the file from the textbox
             JOptionPane.showMessageDialog(null,storeInput);
 
-            // this is the case statement that checks the answer for questions
-            switch(qNum){
-                case 0:
-                    q1(storeInput);                
-                    break;
-                case 1:
-                    q2(storeInput);
-                    break;
-                case 2:
-                    q3(storeInput);
-                    break;
-            }
-
             System.out.println(new File("").getAbsolutePath());
 
         // below is if the user gets it wrong it gives the error message 
@@ -190,6 +177,19 @@ public class LessonTemplate extends javax.swing.JFrame {
         } catch (Exception ex) {
             Logger.getLogger(LessonTemplate.class.getName()).log(Level.SEVERE, null, ex);
             JOptionPane.showMessageDialog(null,ex.getMessage());
+        }
+
+        // this is the case statement that checks the answer for questions
+        switch(qNum){
+            case 0:
+                q1(storeInput);                
+                break;
+            case 1:
+                q2(storeInput);
+                break;
+            case 2:
+                q3(storeInput);
+                break;
         }
 
         MainMenu mm = new MainMenu();
@@ -202,7 +202,10 @@ public class LessonTemplate extends javax.swing.JFrame {
     //prompts what the compiler resulted in
     //promts the number of correct answers
     public void q1(String storeInput){
-        if(storeInput.equals("Hello World")){
+        // lets see what the answer was supposed to be
+        System.out.println("The answer was: " + questions[qNum]);
+
+        if(storeInput.equals(questions[qNum])){
            String result =("You've got it right!");
            correctAnswers++;
            JOptionPane.showMessageDialog(null,result);
@@ -216,7 +219,10 @@ public class LessonTemplate extends javax.swing.JFrame {
     }
 
     public void q2(String storeInput){
-        if(storeInput.equals("Hello World")){
+        // lets see what the answer was supposed to be
+        System.out.println("The answer was: " + questions[qNum]);
+
+        if(storeInput.equals(questions[qNum])){
             String result =("You've got it right!");
             correctAnswers++;
             JOptionPane.showMessageDialog(null,result);
@@ -230,7 +236,10 @@ public class LessonTemplate extends javax.swing.JFrame {
     }
 
     public void q3(String storeInput){
-        if(storeInput.equals("Hello World")){
+        // lets see what the answer was supposed to be
+        System.out.println("The answer was: " + questions[qNum]);
+
+        if(storeInput.equals(questions[qNum])){
            String result =("You've got it right!");
            correctAnswers++;
            JOptionPane.showMessageDialog(null,result);
