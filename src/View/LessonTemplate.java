@@ -15,9 +15,9 @@ import javax.swing.JOptionPane;
 
 public class LessonTemplate extends javax.swing.JFrame {
 
-    /**
-     * Creates new form LessonTemplate
-     */
+    // answers don't change, they can be final
+    final String rightAnswer = "You are correct!";
+    final String wrongAnswer = "You are incorrect.";
 
     // question number and answer are static since we need them stored over multiple instances
     public static int qNum = 0;
@@ -206,13 +206,13 @@ public class LessonTemplate extends javax.swing.JFrame {
         System.out.println("The answer was: " + questions[qNum]);
 
         if(storeInput.equals(questions[qNum])){
-           String result =("You've got it right!");
+           String result =(rightAnswer);
            correctAnswers++;
            JOptionPane.showMessageDialog(null,result);
            JOptionPane.showMessageDialog(null,"Correct Answers: " + correctAnswers + "/3");
        }
        else{
-           String result = ("you suck");
+           String result = (wrongAnswer);
            JOptionPane.showMessageDialog(null,result);
            JOptionPane.showMessageDialog(null,"Correct Answers: " + correctAnswers + "/3");
        }
@@ -223,13 +223,13 @@ public class LessonTemplate extends javax.swing.JFrame {
         System.out.println("The answer was: " + questions[qNum]);
 
         if(storeInput.equals(questions[qNum])){
-            String result =("You've got it right!");
+            String result =(rightAnswer);
             correctAnswers++;
             JOptionPane.showMessageDialog(null,result);
             JOptionPane.showMessageDialog(null,"Correct Answers: " + correctAnswers + "/3");
         }
         else{
-            String result = ("you suck");
+            String result = (wrongAnswer);
             JOptionPane.showMessageDialog(null,result);
             JOptionPane.showMessageDialog(null,"Correct Answers: " + correctAnswers + "/3");
         }
@@ -240,13 +240,13 @@ public class LessonTemplate extends javax.swing.JFrame {
         System.out.println("The answer was: " + questions[qNum]);
 
         if(storeInput.equals(questions[qNum])){
-           String result =("You've got it right!");
+           String result =(rightAnswer);
            correctAnswers++;
            JOptionPane.showMessageDialog(null,result);
            JOptionPane.showMessageDialog(null,"Correct Answers: " + correctAnswers + "/3");
        }
        else{
-           String result = ("you suck");
+           String result = (wrongAnswer);
            JOptionPane.showMessageDialog(null,result);
            JOptionPane.showMessageDialog(null,"Correct Answers: " + correctAnswers + "/3");
        }
