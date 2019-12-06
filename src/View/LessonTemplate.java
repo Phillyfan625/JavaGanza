@@ -12,9 +12,12 @@ import javax.swing.JOptionPane;
 
 public class LessonTemplate extends javax.swing.JFrame {
 
-    // answers don't change, they can be final
+    // questions and answers don't change, they can be final
     final String rightAnswer = "You are correct!";
     final String wrongAnswer = "You are incorrect.";
+    final String question1 = "Print out 'Hello World'";
+    final String question2 = "Create a for loop";
+    final String question3 = "Write a program that has your name in it";
 
     // question number and answer are static since we need them stored over multiple instances
     public static int qNum = 0;
@@ -38,9 +41,9 @@ public class LessonTemplate extends javax.swing.JFrame {
 
     public String[] questions(){
         // add the questions to the string list
-        questions[0] = "Hello World Application";
-        questions[1] = "Create a for loop";
-        questions[2] = "Write a program that has your name in it";
+        questions[0] = question1;
+        questions[1] = question2;
+        questions[2] = question3;
 
         // set the label to the appriorate question
         jLabel2.setText(questions[qNum]); 
