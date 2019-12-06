@@ -22,7 +22,8 @@ public class LessonTemplate extends javax.swing.JFrame {
     // question number and answer are static since we need them stored over multiple instances
     public static int qNum = 0;
     public static int correctAnswers = 0;
-    
+    String storeInput;
+
     // questions are the same every time, so it doesn't need static
     String[] questions;
 
@@ -147,37 +148,27 @@ public class LessonTemplate extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         try {
-            // TODO add your handling code here:
-
-            //take in text area1
-            //take textarea1 to java
-            //this creates a file called q1.java
+            // this creates a file called q1.java
             PrintWriter pw = new PrintWriter("q1.java");
             pw.write(jTextArea1.getText());
             pw.close();            
 
-            String storeInput;            
-            //turn that into command line
-            //this below was hardcoded to a machine originally
-            //storeInput = runCmd("javac C:\\Users\\peter.johnson\\Documents\\NetBeansProjects\\JavaGanza\\q1.java");
-
-            //this below can get the specific directory you are in and is running command line promts with the file we made
+            // this below can get the specific directory you are in and is running command line promts with the file we made
             storeInput = runCmd("javac " +  new File("").getAbsolutePath() + "\\q1.java");
             if(!storeInput.equals("")){
                 throw new Exception(storeInput);
             }
-            //NO MORE HARDCODING!!!!!
-            //storeInput = runCmd("echo Main-Class: q1 > C:\\Users\\peter.johnson\\Documents\\NetBeansProjects\\JavaGanza\\manifest.txt");
+
+            // NO MORE HARDCODING!!!!!
             storeInput = runCmd("echo Main-Class: q1 > " + new File("").getAbsolutePath() + "\\manifest.txt");
 
-            //execute java file
-            //storeInput = runCmd("java q1");
-            //this runs the file
+            // this runs the file
             storeInput = runCmd("java q1");
-            //then gives the result of the file from the textbox
+
+            // then gives the result of the file from the textbox
             JOptionPane.showMessageDialog(null,storeInput);
 
-            //this is the case statement that checks the answer for questions
+            // this is the case statement that checks the answer for questions
             switch(qNum){
                 case 0:
                     q1(storeInput);                
@@ -191,7 +182,8 @@ public class LessonTemplate extends javax.swing.JFrame {
             }
 
             System.out.println(new File("").getAbsolutePath());
-           //below is if the user gets it wrong it gives the error message 
+
+        // below is if the user gets it wrong it gives the error message 
         } catch (FileNotFoundException ex) {
             Logger.getLogger(LessonTemplate.class.getName()).log(Level.SEVERE, null, ex);
             JOptionPane.showMessageDialog(null,ex.getMessage());
