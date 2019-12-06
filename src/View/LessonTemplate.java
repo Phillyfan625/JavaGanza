@@ -18,23 +18,33 @@ public class LessonTemplate extends javax.swing.JFrame {
     /**
      * Creates new form LessonTemplate
      */
-    int qNum = 0;
+
+    // question number and answer are static since we need them stored over multiple instances
+    public static int qNum = 0;
     public static int correctAnswers = 0;
+    
+    // questions are the same every time, so it doesn't need static
+    String[] questions;
 
     public LessonTemplate(int cAnswers) {
+        questions = new String[3];
+        correctAnswers = cAnswers;
+
+        // intialize components and get questions
         initComponents();
         questions();
-        correctAnswers = cAnswers;
+
+        // after generating a button, change the question number
+        qNum += 1;
     }
 
     public String[] questions(){
-
-        String[] questions = new String[3];
+        // add the questions to the string list
         questions[0] = "Hello World Application";
         questions[1] = "Create a for loop";
         questions[2] = "Write a program that has your name in it";
 
-        qNum = new Random().nextInt(questions.length);
+        // set the label to the appriorate question
         jLabel2.setText(questions[qNum]); 
 
         return questions;
