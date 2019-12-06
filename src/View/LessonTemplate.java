@@ -212,7 +212,7 @@ public class LessonTemplate extends javax.swing.JFrame {
            JOptionPane.showMessageDialog(null,"Correct Answers: " + correctAnswers + "/3");
        }
     }
-        
+
     public void q2(String storeInput){
         if(storeInput.equals("Hello World")){
             String result =("You've got it right!");
