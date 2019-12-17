@@ -102,6 +102,11 @@ public class MainMenu extends javax.swing.JFrame {
         );
 
         jButton4.setText("Help");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -145,6 +150,15 @@ public class MainMenu extends javax.swing.JFrame {
         lt3.setVisible(true);
         dispose();
     }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        // TODO add your handling code here:
+        //this is the code for the help button
+        //this button will go to a different menu to explain what java ganza is
+         HelpMenu help = new HelpMenu();
+        help.setVisible(true);
+        dispose();
+    }//GEN-LAST:event_jButton4ActionPerformed
 
     /**
      * @param args the command line arguments
