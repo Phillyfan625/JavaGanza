@@ -13,11 +13,16 @@ import javax.swing.JOptionPane;
 public class LessonTemplate extends javax.swing.JFrame {
 
     // questions and answers don't change, they can be final
+    final String classStructureStart = "public class q1 {\npublic static void main(String[] args){\n";
+    final String classStructureEnd = "\n}\n}";
     final String rightAnswer = "You are correct!";
     final String wrongAnswer = "You are incorrect.";
     final String question1 = "Print out 'Hello World'";
-    final String question2 = "Create a for loop";
-    final String question3 = "Write a program that has your name in it";
+    final String question2 = "Create a enchanced for loop w/ output 123.";
+    final String question3 = "Write a program that displays Jared.";
+    final String answer1 = "System.out.println(\"Hello World\");";
+    final String answer2 = "";
+    final String answer3 = "";
 
     // question number and answer are static since we need them stored over multiple instances
     public static int qNum = 0;
@@ -26,14 +31,17 @@ public class LessonTemplate extends javax.swing.JFrame {
 
     // questions are the same every time, so it doesn't need static
     String[] questions;
+    String[] answers;
 
     public LessonTemplate() {
         questions = new String[3];
+        answers = new String[3];
 
         // intialize components and get questions
         initComponents();
         setResizable(false);
         questions();
+        answers();
 
         // after generating a button, change the question number
         qNum += 1;
@@ -49,6 +57,15 @@ public class LessonTemplate extends javax.swing.JFrame {
         jLabel2.setText(questions[qNum]); 
 
         return questions;
+    }
+
+    public String[] answers() {
+        // add answeres to string list
+        answers[0] = answer1;
+        answers[1] = answer2;
+        answers[2] = answer3;
+
+        return answers;
     }
 
 //    private void jLabel1ActionPerformed(java.awt.event.ActionEvent evt){
@@ -101,20 +118,19 @@ public class LessonTemplate extends javax.swing.JFrame {
                 .addContainerGap(56, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 302, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(42, 42, 42))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel3)
                         .addGap(149, 149, 149))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel1)
                         .addGap(144, 144, 144))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(108, 108, 108))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addComponent(jButton1)
-                        .addGap(162, 162, 162))))
+                        .addGap(162, 162, 162))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 302, Short.MAX_VALUE)
+                            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(42, 42, 42))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -150,7 +166,7 @@ public class LessonTemplate extends javax.swing.JFrame {
         try {
             // this creates a file called q1.java
             PrintWriter pw = new PrintWriter("q1.java");
-            pw.write(jTextArea1.getText());
+            pw.write(classStructureStart + jTextArea1.getText() + classStructureEnd);
             pw.close();            
 
             // this below can get the specific directory you are in and is running command line promts with the file we made
@@ -205,7 +221,7 @@ public class LessonTemplate extends javax.swing.JFrame {
         // lets see what the answer was supposed to be
         System.out.println("The answer was: " + questions[qNum]);
 
-        if(storeInput.equals(questions[qNum])){
+        if(storeInput.equals(answers[qNum])){
            String result =(rightAnswer);
            correctAnswers++;
            JOptionPane.showMessageDialog(null,result);
@@ -222,7 +238,7 @@ public class LessonTemplate extends javax.swing.JFrame {
         // lets see what the answer was supposed to be
         System.out.println("The answer was: " + questions[qNum]);
 
-        if(storeInput.equals(questions[qNum])){
+        if(storeInput.equals(answers[qNum])){
             String result =(rightAnswer);
             correctAnswers++;
             JOptionPane.showMessageDialog(null,result);
@@ -239,7 +255,7 @@ public class LessonTemplate extends javax.swing.JFrame {
         // lets see what the answer was supposed to be
         System.out.println("The answer was: " + questions[qNum]);
 
-        if(storeInput.equals(questions[qNum])){
+        if(storeInput.equals(answers[qNum])){
            String result =(rightAnswer);
            correctAnswers++;
            JOptionPane.showMessageDialog(null,result);
