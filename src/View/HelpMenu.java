@@ -37,6 +37,7 @@ public class HelpMenu extends javax.swing.JFrame {
         jLabel1.setFont(new java.awt.Font("Verdana", 1, 24)); // NOI18N
         jLabel1.setText("HELP");
 
+        jTextArea1.setEditable(false);
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
         jTextArea1.setText("This app will ask you a question on every lesson.\nIt will start off easy and progress to harder\nconcepts as you go along.");
